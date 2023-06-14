@@ -7,7 +7,7 @@ const path = require("path");
 const config = require('./config/db');
 const account = require('./routes/account');
 const session = require('express-session');
-const Book = require('./models/book');
+const Excursion = require('./models/book');
 
 
 const app = express();
