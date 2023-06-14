@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    restart: always
+    volumes:
+      - db:/data/db
+    networks:
+      network:
+        ipv4_address: 10.5.0.2
+  express:
+    build: 
+      context: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    networks:
+      network:
+        ipv4_address: 10.5.0.3
+  angular:
+    build: 
+      context: lab5-client
+    ports:
+      - 4200:80
+    networks:
+      network:
+        ipv4_address: 10.5.0.4
+volumes:
+  db:
+    driver: local
+networks:
+  network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
+
