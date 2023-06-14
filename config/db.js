@@ -1,4 +1,4 @@
 module.exports = {
-    db:"mongodb://mongo:X6u3WvwkbokONLHEgjBG@containers-us-west-46.railway.app:5510/museum?authSource=admin",
+    db:"mongodb://mongo:y4fQvg5bphyVFPOodXrx@containers-us-west-35.railway.app:7599/museum?authSource=admin",
     secret: "X6u3WvwkbokONLHEgjBG"
 }
